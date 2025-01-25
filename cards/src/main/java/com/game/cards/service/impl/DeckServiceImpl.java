@@ -33,13 +33,13 @@ public class DeckServiceImpl implements DeckService {
     }
 
     @Override
-    public List<CardDTO> selectCards(String deckId, int count) {
+    public List<CardDTO> selectCards(String deckId, int countCards) {
 
-        if (deckId == null && count == 0) {
+        if (deckId == null && countCards == 0) {
             throw new IllegalArgumentException("DeckId e count são obrigatórios.");
         }
 
-        DrawResponseDTO drawResponseDTO =  apiDeckFeignClient.drawCards(count, deckId).getBody();
+        DrawResponseDTO drawResponseDTO =  apiDeckFeignClient.drawCards(countCards, deckId).getBody();
 
         if (drawResponseDTO == null) {
             throw new FeignClientException("Ocorreu um erro ao obter as cartas.");

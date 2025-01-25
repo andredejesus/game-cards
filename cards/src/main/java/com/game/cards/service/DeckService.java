@@ -8,7 +8,7 @@ public interface DeckService {
 
     String createNewDeck();
 
-    List<CardDTO> selectCards(String deckId, int count);
+    List<CardDTO> selectCards(String deckId, int countCards);
 
 
 }

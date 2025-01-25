@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Component
 @FeignClient(
         name = "ApiDeck",
-        url = "https://deckofcardsapi.com/api")
+        url = "${feign-client.url.api}")
 public interface ApiDeckFeignClient {
 
     @GetMapping(value = "/deck/new/shuffle/", produces = "application/json")

@@ -12,6 +12,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;
@@ -31,7 +32,7 @@ class DeckServiceImplTest {
     @BeforeEach
     public void setUp() {
         apiDeckFeignClient = Mockito.mock(ApiDeckFeignClient.class);
-        deckServiceImpl = new DeckServiceImpl(apiDeckFeignClient);
+        MockitoAnnotations.openMocks(this);
     }
 
     @Test
@@ -101,10 +102,8 @@ class DeckServiceImplTest {
         int cardValue = 6;
         String cardCode = "6H";
 
-        List<ImageDTO> images = List.of(new ImageDTO("png", cardImage));
-
         List<CardDTO> cardsMock = List
-                .of(new CardDTO(cardCode, cardImage, images, String.valueOf(cardValue), cardSuit));
+                .of(new CardDTO(cardCode, cardImage, String.valueOf(cardValue), cardSuit));
 
         when(apiDeckFeignClient.drawCards(1, deckId))
                 .thenReturn(ResponseEntity
