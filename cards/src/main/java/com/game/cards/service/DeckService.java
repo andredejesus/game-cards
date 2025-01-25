@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface DeckService {
 
-    String createNewDeck(Integer deckCount);
+    String createNewDeck();
 
     List<CardDTO> selectCards(String deckId, int count);
 

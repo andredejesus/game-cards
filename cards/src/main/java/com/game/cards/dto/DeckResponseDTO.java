@@ -13,6 +13,13 @@ public class DeckResponseDTO {
 
     private int remaining;
 
+    public DeckResponseDTO(boolean success, String deckId, boolean shuffled, int remaining) {
+        this.success = success;
+        this.deckId = deckId;
+        this.shuffled = shuffled;
+        this.remaining = remaining;
+    }
+
     public boolean isSuccess() {
         return success;
     }
