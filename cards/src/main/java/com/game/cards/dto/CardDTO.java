@@ -54,6 +54,14 @@ public class CardDTO {
         this.suit = suit;
     }
 
+    public CardDTO(String code, String image, List<ImageDTO> images, String value, String suit) {
+        this.code = code;
+        this.image = image;
+        this.images = images;
+        this.value = value;
+        this.suit = suit;
+    }
+
     @Override
     public String toString() {
         return "CardDTO{" +

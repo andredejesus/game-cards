@@ -6,6 +6,11 @@ public class ImageDTO {
 
     private String png;
 
+    public ImageDTO(String svg, String png) {
+        this.svg = svg;
+        this.png = png;
+    }
+
     public String getSvg() {
         return svg;
     }

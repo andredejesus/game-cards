@@ -3,6 +3,7 @@ package com.game.cards.service.impl;
 import com.game.cards.client.ApiDeckFeignClient;
 import com.game.cards.dto.CardDTO;
 import com.game.cards.dto.DeckResponseDTO;
+import com.game.cards.dto.DrawResponseDTO;
 import com.game.cards.exception.FeignClientException;
 import com.game.cards.service.DeckService;
 import org.springframework.stereotype.Service;
@@ -33,6 +34,17 @@ public class DeckServiceImpl implements DeckService {
 
     @Override
     public List<CardDTO> selectCards(String deckId, int count) {
-        return null;
+
+        if (deckId == null && count == 0) {
+            throw new IllegalArgumentException("DeckId e count são obrigatórios.");
+        }
+
+        DrawResponseDTO drawResponseDTO =  apiDeckFeignClient.drawCards(count, deckId).getBody();
+
+        if (drawResponseDTO == null) {
+            throw new FeignClientException("Ocorreu um erro ao obter as cartas.");
+        }
+
+        return drawResponseDTO.getCards();
     }
 }

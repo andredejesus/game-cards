@@ -15,6 +15,13 @@ public class DrawResponseDTO {
 
     private int remaining;
 
+    public DrawResponseDTO(boolean success, String deckId, List<CardDTO> cards, int remaining) {
+        this.success = success;
+        this.deckId = deckId;
+        this.cards = cards;
+        this.remaining = remaining;
+    }
+
     public boolean isSuccess() {
         return success;
     }
