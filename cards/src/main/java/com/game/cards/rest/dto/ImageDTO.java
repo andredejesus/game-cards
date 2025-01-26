@@ -1,4 +1,4 @@
-package com.game.cards.dto;
+package com.game.cards.rest.dto;
 
 public class ImageDTO {
 

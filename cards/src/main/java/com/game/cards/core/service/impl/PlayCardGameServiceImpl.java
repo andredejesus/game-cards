@@ -1,12 +1,12 @@
-package com.game.cards.service.impl;
+package com.game.cards.core.service.impl;
 
-import com.game.cards.dto.CardDTO;
-import com.game.cards.exception.MandatoryFieldsException;
-import com.game.cards.model.PlayerDataEntity;
-import com.game.cards.repository.PlayerDataRepository;
-import com.game.cards.service.CalculateScoreService;
-import com.game.cards.service.DeckService;
-import com.game.cards.service.PlayCardGameService;
+import com.game.cards.core.repository.PlayerDataRepository;
+import com.game.cards.core.service.CalculateScoreService;
+import com.game.cards.core.service.DeckService;
+import com.game.cards.core.service.PlayCardGameService;
+import com.game.cards.rest.dto.CardDTO;
+import com.game.cards.core.exception.MandatoryFieldsException;
+import com.game.cards.core.model.PlayerDataEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;

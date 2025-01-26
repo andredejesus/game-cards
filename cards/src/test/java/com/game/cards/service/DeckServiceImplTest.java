@@ -1,13 +1,12 @@
 package com.game.cards.service;
 
-import com.game.cards.client.ApiDeckFeignClient;
-import com.game.cards.dto.CardDTO;
-import com.game.cards.dto.DeckResponseDTO;
-import com.game.cards.dto.DrawResponseDTO;
-import com.game.cards.dto.ImageDTO;
-import com.game.cards.exception.FeignClientException;
-import com.game.cards.service.impl.DeckServiceImpl;
-import org.junit.jupiter.api.Assertions;
+import com.game.cards.core.exception.MandatoryFieldsException;
+import com.game.cards.rest.client.ApiDeckFeignClient;
+import com.game.cards.rest.dto.CardDTO;
+import com.game.cards.rest.dto.DeckResponseDTO;
+import com.game.cards.rest.dto.DrawResponseDTO;
+import com.game.cards.rest.exception.FeignClientException;
+import com.game.cards.core.service.impl.DeckServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -84,8 +83,8 @@ class DeckServiceImplTest {
     @Test
     void deve_gerar_uma_excecao_caso_deckId_e_count_sejam_nulos() {
 
-        IllegalArgumentException exception = assertThrows(
-                IllegalArgumentException.class,
+        MandatoryFieldsException exception = assertThrows(
+                MandatoryFieldsException.class,
                 () -> deckServiceImpl.selectCards(null, 0),
                 "DeckId e count são obrigatórios."
         );

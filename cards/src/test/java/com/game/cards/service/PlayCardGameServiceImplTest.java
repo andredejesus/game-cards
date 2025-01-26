@@ -1,10 +1,12 @@
 package com.game.cards.service;
 
-import com.game.cards.dto.CardDTO;
-import com.game.cards.model.PlayerDataEntity;
+import com.game.cards.core.service.CalculateScoreService;
+import com.game.cards.core.service.DeckService;
+import com.game.cards.rest.dto.CardDTO;
+import com.game.cards.core.model.PlayerDataEntity;
 
-import com.game.cards.repository.PlayerDataRepository;
-import com.game.cards.service.impl.PlayCardGameServiceImpl;
+import com.game.cards.core.repository.PlayerDataRepository;
+import com.game.cards.core.service.impl.PlayCardGameServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

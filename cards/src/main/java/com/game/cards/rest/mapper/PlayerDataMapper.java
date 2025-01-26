@@ -1,12 +1,15 @@
-package com.game.cards.mapper;
+package com.game.cards.rest.mapper;
 
-import com.game.cards.dto.PlayerDataResponseDTO;
-import com.game.cards.model.PlayerDataEntity;
+import com.game.cards.rest.dto.PlayerDataResponseDTO;
+import com.game.cards.core.model.PlayerDataEntity;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class PlayerDataMapper {
+
+    private PlayerDataMapper() {
+    }
 
     public static PlayerDataResponseDTO toDTO(PlayerDataEntity entity) {
         if (entity == null) {

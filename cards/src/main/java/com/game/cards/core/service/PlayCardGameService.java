@@ -1,6 +1,6 @@
-package com.game.cards.service;
+package com.game.cards.core.service;
 
-import com.game.cards.model.PlayerDataEntity;
+import com.game.cards.core.model.PlayerDataEntity;
 
 import java.util.List;
 

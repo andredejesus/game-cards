@@ -1,13 +1,12 @@
-package com.game.cards.service.impl;
+package com.game.cards.core.service.impl;
 
-import com.game.cards.client.ApiDeckFeignClient;
-import com.game.cards.dto.CardDTO;
-import com.game.cards.dto.DeckResponseDTO;
-import com.game.cards.dto.DrawResponseDTO;
-import com.game.cards.exception.FeignClientException;
-import com.game.cards.exception.MandatoryFieldsException;
-import com.game.cards.service.DeckService;
-import io.swagger.v3.oas.annotations.media.Schema;
+import com.game.cards.core.service.DeckService;
+import com.game.cards.rest.client.ApiDeckFeignClient;
+import com.game.cards.rest.dto.CardDTO;
+import com.game.cards.rest.dto.DeckResponseDTO;
+import com.game.cards.rest.dto.DrawResponseDTO;
+import com.game.cards.rest.exception.FeignClientException;
+import com.game.cards.core.exception.MandatoryFieldsException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

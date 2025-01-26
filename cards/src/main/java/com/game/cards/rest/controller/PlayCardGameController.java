@@ -1,9 +1,9 @@
-package com.game.cards.controller;
+package com.game.cards.rest.controller;
 
-import com.game.cards.dto.PlayerDataResponseDTO;
-import com.game.cards.mapper.PlayerDataMapper;
-import com.game.cards.model.PlayerDataEntity;
-import com.game.cards.service.PlayCardGameService;
+import com.game.cards.rest.dto.PlayerDataResponseDTO;
+import com.game.cards.rest.mapper.PlayerDataMapper;
+import com.game.cards.core.model.PlayerDataEntity;
+import com.game.cards.core.service.PlayCardGameService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;

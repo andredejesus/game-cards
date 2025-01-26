@@ -1,4 +1,4 @@
-package com.game.cards.exception;
+package com.game.cards.core.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

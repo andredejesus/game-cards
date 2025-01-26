@@ -1,7 +1,7 @@
-package com.game.cards.service.impl;
+package com.game.cards.core.service.impl;
 
-import com.game.cards.dto.CardDTO;
-import com.game.cards.service.CalculateScoreService;
+import com.game.cards.core.service.CalculateScoreService;
+import com.game.cards.rest.dto.CardDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

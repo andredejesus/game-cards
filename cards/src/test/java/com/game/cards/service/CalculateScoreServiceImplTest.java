@@ -1,7 +1,7 @@
 package com.game.cards.service;
 
-import com.game.cards.dto.CardDTO;
-import com.game.cards.service.impl.CalculateScoreServiceImpl;
+import com.game.cards.rest.dto.CardDTO;
+import com.game.cards.core.service.impl.CalculateScoreServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

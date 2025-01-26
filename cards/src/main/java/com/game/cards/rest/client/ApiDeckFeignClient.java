@@ -1,7 +1,7 @@
-package com.game.cards.client;
+package com.game.cards.rest.client;
 
-import com.game.cards.dto.DeckResponseDTO;
-import com.game.cards.dto.DrawResponseDTO;
+import com.game.cards.rest.dto.DeckResponseDTO;
+import com.game.cards.rest.dto.DrawResponseDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;

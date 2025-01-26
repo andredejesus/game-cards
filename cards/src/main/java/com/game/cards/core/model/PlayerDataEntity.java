@@ -1,4 +1,4 @@
-package com.game.cards.model;
+package com.game.cards.core.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
