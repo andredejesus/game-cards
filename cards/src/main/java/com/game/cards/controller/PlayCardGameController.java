@@ -4,6 +4,10 @@ import com.game.cards.dto.PlayerDataResponseDTO;
 import com.game.cards.mapper.PlayerDataMapper;
 import com.game.cards.model.PlayerDataEntity;
 import com.game.cards.service.PlayCardGameService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,9 +24,20 @@ public class PlayCardGameController {
         this.playCardGameService = playCardGameService;
     }
 
+    @Operation(
+            summary = "Jogo de cartas",
+            description = "Jogar um jogo de cartas com a quantidade de jogadores e cartas informadas.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Sucesso"),
+            @ApiResponse(responseCode = "400", description = "Campos obrigatórios não informados"),
+            @ApiResponse(responseCode = "500", description = "Erro interno do servidor")
+    })
     @GetMapping("/play")
-    public ResponseEntity<List<PlayerDataResponseDTO>> play(@RequestParam Integer qtdPlayers,
-                                                      @RequestParam Integer countCards) {
+    public ResponseEntity<List<PlayerDataResponseDTO>> play(
+                                                @Parameter(description = "Quantidade de jogadores", required = true)
+                                                @RequestParam Integer qtdPlayers,
+                                                @Parameter(description = "Quantidade de cartas", required = true)
+                                                @RequestParam Integer countCards) {
 
         List<PlayerDataEntity> playerDataEntityList =  playCardGameService.play(qtdPlayers, countCards);
 

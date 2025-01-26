@@ -1,6 +1,7 @@
 package com.game.cards.service.impl;
 
 import com.game.cards.dto.CardDTO;
+import com.game.cards.exception.MandatoryFieldsException;
 import com.game.cards.model.PlayerDataEntity;
 import com.game.cards.repository.PlayerDataRepository;
 import com.game.cards.service.CalculateScoreService;
@@ -30,6 +31,10 @@ public class PlayCardGameServiceImpl implements PlayCardGameService {
     @Override
     public List<PlayerDataEntity> play(Integer qtdPlayers, Integer countCards) {
 
+        if (qtdPlayers == 0 && countCards == 0) {
+            throw new MandatoryFieldsException("Quantidade de jogadores e cartas são obrigatórios.");
+        }
+
         String deckId = deckService.createNewDeck();
 
         List<PlayerDataEntity> players = new ArrayList<>();
@@ -53,7 +58,7 @@ public class PlayCardGameServiceImpl implements PlayCardGameService {
 
     }
 
-    List<PlayerDataEntity> verifyWinner(List<PlayerDataEntity> players) {
+    private List<PlayerDataEntity> verifyWinner(List<PlayerDataEntity> players) {
 
         List<PlayerDataEntity> winners = new ArrayList<>();
 

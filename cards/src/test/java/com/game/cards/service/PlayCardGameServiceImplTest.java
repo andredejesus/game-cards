@@ -3,6 +3,7 @@ package com.game.cards.service;
 import com.game.cards.dto.CardDTO;
 import com.game.cards.model.PlayerDataEntity;
 
+import com.game.cards.repository.PlayerDataRepository;
 import com.game.cards.service.impl.PlayCardGameServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -23,6 +24,9 @@ class PlayCardGameServiceImplTest {
 
     @Mock
     private CalculateScoreService calculateScoreService;
+
+    @Mock
+    private PlayerDataRepository playerDataRepository;
 
     @InjectMocks
     private PlayCardGameServiceImpl playCardGameServiceImpl;
