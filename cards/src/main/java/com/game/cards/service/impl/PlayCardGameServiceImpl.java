@@ -2,6 +2,7 @@ package com.game.cards.service.impl;
 
 import com.game.cards.dto.CardDTO;
 import com.game.cards.model.PlayerDataEntity;
+import com.game.cards.repository.PlayerDataRepository;
 import com.game.cards.service.CalculateScoreService;
 import com.game.cards.service.DeckService;
 import com.game.cards.service.PlayCardGameService;
@@ -16,10 +17,14 @@ public class PlayCardGameServiceImpl implements PlayCardGameService {
 
     private final DeckService deckService;
     private final CalculateScoreService calculateScoreService;
+    private final PlayerDataRepository playerDataRepository;
 
-    public PlayCardGameServiceImpl(DeckService deckService, CalculateScoreService calculateScoreService) {
+    public PlayCardGameServiceImpl(DeckService deckService,
+                                   CalculateScoreService calculateScoreService,
+                                   PlayerDataRepository playerDataRepository) {
         this.deckService = deckService;
         this.calculateScoreService = calculateScoreService;
+        this.playerDataRepository = playerDataRepository;
     }
 
     @Override
@@ -66,6 +71,9 @@ public class PlayCardGameServiceImpl implements PlayCardGameService {
             }
             player.setCreatedAt(LocalDateTime.now());
         }
+
+        playerDataRepository.saveAll(winners);
+
         return winners;
     }
 }
