@@ -49,6 +49,8 @@ Este projeto é uma API que permite realizar jogos de cartas de forma dinâmica.
 
 ## Estrutura do Projeto
 
+![alt text](image.png)
+
 ### Camada REST (`com.game.cards.rest`)
 
 - **Controller**:
