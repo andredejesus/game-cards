@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  app_game_cards:
+    build: 
+      context: ./cards
+    image: project-api-game-cards
+    container_name: container_api_game_cards
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db_game_cards:5432/postgres
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db_game_cards 
+
+  db_game_cards:
+    image: postgres:15
+    container_name: container_db_game_cards
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data: {}

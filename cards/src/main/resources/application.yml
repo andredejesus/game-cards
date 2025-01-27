@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
+    url: jdbc:postgresql://localhost:5432/banco_de_dados
     driver-class-name: org.postgresql.Driver
     username: username
     password: password
